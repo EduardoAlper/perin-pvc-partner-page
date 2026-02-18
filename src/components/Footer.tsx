@@ -1,4 +1,5 @@
 import { MapPin, Mail, Phone, Instagram, Facebook } from 'lucide-react';
+import logoImg from '@/assets/logo-perin.png';
 import { PHONE, PHONE_TEL, WHATSAPP_DISPLAY, EMAIL, ADDRESS, ADDRESS_NEIGHBORHOOD, INSTAGRAM_URL, FACEBOOK_URL, SITE_URL } from '@/lib/constants';
 
 export const Footer = () => {
@@ -8,9 +9,8 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="font-display font-bold text-2xl text-perin-50">PERIN</span>
-              <span className="text-primary font-display font-semibold">Plásticos</span>
+            <div className="mb-4">
+              <img src={logoImg} alt="Perin Plásticos" className="h-12 brightness-0 invert" />
             </div>
             <p className="text-perin-400 mb-6 max-w-md">
               Fabricação própria de divisórias em PVC desde 1999. Qualidade, durabilidade e condições especiais para parceiros B2B.

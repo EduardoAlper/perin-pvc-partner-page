@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { WHATSAPP_FULL_URL } from '@/lib/constants';
+import logoImg from '@/assets/logo-perin.png';
 
 const navItems = [
   { label: 'Elegância', href: '#elegancia' },
@@ -44,11 +45,8 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="https://perinplasticos.com.br" className="flex items-center gap-2">
-            <span className={`font-display font-bold text-3xl ${isScrolled ? 'text-foreground' : 'text-white'}`}>
-              PERIN
-            </span>
-            <span className="text-primary font-display font-semibold text-xl">Plásticos</span>
+          <a href="https://perinplasticos.com.br" className="flex items-center">
+            <img src={logoImg} alt="Perin Plásticos" className="h-12" />
           </a>
 
           {/* Desktop Navigation */}
