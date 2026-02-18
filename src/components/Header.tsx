@@ -6,7 +6,7 @@ import { WHATSAPP_FULL_URL } from '@/lib/constants';
 import logoImg from '@/assets/logo-perin.png';
 
 const navItems = [
-  { label: 'Elegância', href: '#elegancia' },
+  { label: 'Soluções', href: '#elegancia' },
   { label: 'Tecnologia', href: '#tecnologia' },
   { label: 'Benefícios', href: '#beneficios' },
   { label: 'Informações', href: '#informacoes' },
