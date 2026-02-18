@@ -14,32 +14,33 @@ import {
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
+import { WHATSAPP_FULL_URL } from '@/lib/constants';
 
 const personas = [
   {
     icon: Building2,
     title: 'Distribuidor/Atacadista',
-    description: 'Condições especiais para grandes volumes e frete otimizado.',
+    description: 'Volume, tabela especial e suporte logístico.',
   },
   {
     icon: Store,
     title: 'Lojas de Materiais',
-    description: 'Margem competitiva e produto com alto giro de estoque.',
+    description: 'Estoque pronto e material de PDV.',
   },
   {
     icon: Warehouse,
     title: 'Depósitos',
-    description: 'Preços de fábrica para estoque próprio e revenda regional.',
+    description: 'Condições para grande volume e entrega programada.',
   },
   {
     icon: HardHat,
     title: 'Arquitetos e Engenheiros',
-    description: 'Especificação técnica e suporte para projetos corporativos.',
+    description: 'Especificação técnica e suporte a projetos.',
   },
   {
     icon: Users,
-    title: 'Representantes',
-    description: 'Região exclusiva, comissões atrativas e suporte comercial.',
+    title: 'Representantes Comerciais',
+    description: 'Território exclusivo e comissionamento atrativo.',
   },
 ];
 
@@ -55,13 +56,6 @@ export const B2BSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const handleScrollTo = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="b2b" className="py-24 bg-secondary text-secondary-foreground" ref={ref}>
       <div className="container mx-auto px-4">
@@ -72,14 +66,14 @@ export const B2BSection = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-block px-4 py-1.5 bg-primary/20 text-primary rounded-full text-sm font-semibold mb-4 font-display">
-            B2B
+            Parceria B2B
           </span>
           <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-6">
             Condições únicas para B2B:{' '}
             <span className="text-primary">revendedores, distribuidores e representantes</span>
           </h2>
           <p className="text-lg text-perin-300 leading-relaxed">
-            Parceria sólida com quem quer crescer junto. Escolha seu perfil e descubra as vantagens.
+            Seja nosso parceiro e tenha acesso a condições exclusivas, suporte dedicado e uma linha completa de produtos com alta demanda.
           </p>
         </motion.div>
 
@@ -114,7 +108,7 @@ export const B2BSection = () => {
           className="bg-perin-800/30 backdrop-blur-sm border border-perin-700 rounded-2xl p-8 md:p-12"
         >
           <h3 className="font-display font-bold text-2xl text-perin-50 mb-8 text-center">
-            O que você recebe como parceiro
+            O que você recebe como parceiro Perin Plásticos
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
             {partnerBenefits.map((benefit, index) => (
@@ -137,11 +131,13 @@ export const B2BSection = () => {
             <Button
               variant="hero"
               size="lg"
-              onClick={() => handleScrollTo('#contato')}
+              asChild
               className="group"
             >
-              Quero ser parceiro Perin
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
+                Quero ser parceiro Perin Plásticos
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
         </motion.div>

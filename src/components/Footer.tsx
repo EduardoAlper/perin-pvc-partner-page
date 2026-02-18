@@ -1,4 +1,5 @@
-import { MapPin, Mail, Phone, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
+import { MapPin, Mail, Phone, Instagram, Facebook } from 'lucide-react';
+import { PHONE, PHONE_TEL, WHATSAPP_DISPLAY, EMAIL, ADDRESS, ADDRESS_NEIGHBORHOOD, INSTAGRAM_URL, FACEBOOK_URL, SITE_URL } from '@/lib/constants';
 
 export const Footer = () => {
   return (
@@ -12,33 +13,24 @@ export const Footer = () => {
               <span className="text-primary font-display font-semibold">Plásticos</span>
             </div>
             <p className="text-perin-400 mb-6 max-w-md">
-              Desde 1999 fabricando divisórias em PVC com qualidade e compromisso.
-              Atendemos revendedores, distribuidores, construtoras e representantes comerciais.
+              Fabricação própria de divisórias em PVC desde 1999. Qualidade, durabilidade e condições especiais para parceiros B2B.
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-perin-800 flex items-center justify-center text-perin-400 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-perin-800 flex items-center justify-center text-perin-400 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-perin-800 flex items-center justify-center text-perin-400 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-perin-800 flex items-center justify-center text-perin-400 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
-                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -50,25 +42,24 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-perin-400">
-                  Rua Industrial, 1234<br />
-                  Bairro Industrial - SP<br />
-                  CEP: 00000-000
+                  {ADDRESS}<br />
+                  {ADDRESS_NEIGHBORHOOD}
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <a href="mailto:comercial@perinplasticos.com.br" className="text-perin-400 hover:text-primary transition-colors">
-                  comercial@perinplasticos.com.br
+                <a href={`mailto:${EMAIL}`} className="text-perin-400 hover:text-primary transition-colors">
+                  {EMAIL}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
                 <div className="text-perin-400">
-                  <a href="tel:+551100000000" className="hover:text-primary transition-colors block">
-                    (11) 0000-0000
+                  <a href={PHONE_TEL} className="hover:text-primary transition-colors block">
+                    {PHONE}
                   </a>
-                  <a href="tel:+5511900000000" className="hover:text-primary transition-colors block">
-                    (11) 90000-0000
+                  <a href={`https://wa.me/5541984078829`} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors block">
+                    {WHATSAPP_DISPLAY} (WhatsApp)
                   </a>
                 </div>
               </li>
@@ -79,13 +70,21 @@ export const Footer = () => {
           <div>
             <h4 className="font-display font-bold text-lg text-perin-50 mb-6">Navegação</h4>
             <ul className="space-y-3">
-              {['Elegância', 'Tecnologia', 'Benefícios', 'Informações', 'B2B', 'Contato'].map((item) => (
-                <li key={item}>
+              {[
+                { label: 'Início', href: SITE_URL },
+                { label: 'Sobre Nós', href: `${SITE_URL}/historia/` },
+                { label: 'Produtos', href: `${SITE_URL}/produtos/` },
+                { label: 'Divisórias', href: `${SITE_URL}/divisorias-em-pvc/` },
+                { label: 'Contato', href: `${SITE_URL}/contato/` },
+              ].map((item) => (
+                <li key={item.label}>
                   <a
-                    href={`#${item.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')}`}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-perin-400 hover:text-primary transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}
@@ -102,7 +101,7 @@ export const Footer = () => {
             <div className="flex items-center gap-2 bg-perin-800/50 rounded-full px-4 py-2">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <p className="text-xs text-perin-400">
-                <strong className="text-perin-300">Atendimento exclusivo B2B.</strong> Não vendemos varejo/consumidor final.
+                <strong className="text-perin-300">Atendimento exclusivo B2B.</strong> Atendemos revendedores, distribuidores, construtoras e representantes. Não vendemos varejo.
               </p>
             </div>
           </div>

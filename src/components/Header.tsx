@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
+import { WHATSAPP_FULL_URL } from '@/lib/constants';
 
 const navItems = [
   { label: 'Elegância', href: '#elegancia' },
@@ -43,11 +44,11 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <span className="font-display font-bold text-2xl text-foreground">
+          <a href="https://perinplasticos.com.br" className="flex items-center gap-2">
+            <span className={`font-display font-bold text-3xl ${isScrolled ? 'text-foreground' : 'text-white'}`}>
               PERIN
             </span>
-            <span className="text-primary font-display font-semibold">Plásticos</span>
+            <span className="text-primary font-display font-semibold text-xl">Plásticos</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -56,7 +57,9 @@ export const Header = () => {
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 font-display"
+                className={`px-4 py-2 text-sm font-medium transition-colors duration-200 font-display ${
+                  isScrolled ? 'text-muted-foreground hover:text-primary' : 'text-white/80 hover:text-primary'
+                }`}
               >
                 {item.label}
               </button>
@@ -68,22 +71,26 @@ export const Header = () => {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => handleNavClick('#contato')}
+              asChild
             >
-              Tabela B2B
+              <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
+                Tabela B2B
+              </a>
             </Button>
             <Button
               variant="default"
               size="sm"
-              onClick={() => handleNavClick('#contato')}
+              asChild
             >
-              Seja Representante
+              <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
+                Seja Representante
+              </a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className={`lg:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -111,17 +118,15 @@ export const Header = () => {
                 </button>
               ))}
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-border">
-                <Button
-                  variant="outline"
-                  onClick={() => handleNavClick('#contato')}
-                >
-                  Tabela B2B
+                <Button variant="outline" asChild>
+                  <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
+                    Tabela B2B
+                  </a>
                 </Button>
-                <Button
-                  variant="default"
-                  onClick={() => handleNavClick('#contato')}
-                >
-                  Seja Representante
+                <Button variant="default" asChild>
+                  <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
+                    Seja Representante
+                  </a>
                 </Button>
               </div>
             </nav>

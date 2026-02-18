@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import clinicImage from '@/assets/clinic-partition.jpg';
-import schoolImage from '@/assets/school-partition.jpg';
-import coworkingImage from '@/assets/coworking-partition.jpg';
-import profileImage from '@/assets/pvc-profile-detail.jpg';
+import divisoriaAplicacao from '@/assets/divisoria-pvc-aplicacao.jpg';
+import divisoriaProduto from '@/assets/divisoria-pvc-produto.jpg';
+import divisoriasHeader from '@/assets/divisorias-header.png';
+import portaDivisoria from '@/assets/porta-divisoria.jpg';
 
 const images = [
-  { src: clinicImage, alt: 'Divisórias PVC em clínica médica', caption: 'Clínicas e Consultórios' },
-  { src: schoolImage, alt: 'Divisórias PVC em ambiente escolar', caption: 'Escolas e Universidades' },
-  { src: coworkingImage, alt: 'Divisórias PVC em coworking', caption: 'Escritórios e Coworkings' },
-  { src: profileImage, alt: 'Detalhe do perfil PVC Perin', caption: 'Perfil de Encaixe' },
+  { src: divisoriasHeader, alt: 'Divisórias em PVC Perin Plásticos', caption: 'Divisórias PVC' },
+  { src: divisoriaAplicacao, alt: 'Divisórias PVC aplicação em ambiente', caption: 'Aplicação em Ambientes' },
+  { src: divisoriaProduto, alt: 'Divisória PVC 200x35 Perin Plásticos', caption: 'Perfil Divisória' },
+  { src: portaDivisoria, alt: 'Porta PVC Divisória Perin Plásticos', caption: 'Porta Divisória' },
 ];
 
 export const EleganciaSection = () => {
@@ -27,16 +27,14 @@ export const EleganciaSection = () => {
           className="max-w-3xl mb-16"
         >
           <span className="inline-block px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-semibold mb-4 font-display">
-            Elegância
+            Soluções Práticas
           </span>
           <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
             Ambientes bem divididos, obra rápida e{' '}
             <span className="text-primary">manutenção mínima</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            As divisórias Perin são o produto certo para quem atende construtoras, 
-            clínicas, escolas e escritórios corporativos. Seu cliente ganha ambientes 
-            organizados com instalação rápida e você ganha margem e giro de estoque.
+            Divisórias: uma solução prática e profissional para projetos corporativos, com facilidade na instalação, alta durabilidade e economia no longo prazo.
           </p>
         </motion.div>
 

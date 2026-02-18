@@ -1,19 +1,11 @@
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
+import { WHATSAPP_FULL_URL } from '@/lib/constants';
 
 export const WhatsAppButton = () => {
-  const whatsappNumber = '5511900000000';
-  const message = encodeURIComponent(
-    'Olá! Vim pelo site e gostaria de saber mais sobre as divisórias PVC Perin.\n\n' +
-    'Cidade/UF: \n' +
-    'Segmento: \n' +
-    'Interesse: [ ] Revenda [ ] Representação'
-  );
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
-
   return (
     <motion.a
-      href={whatsappUrl}
+      href={WHATSAPP_FULL_URL}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}
