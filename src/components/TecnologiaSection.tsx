@@ -9,43 +9,38 @@ import {
   Leaf, 
   Award 
 } from 'lucide-react';
-import profileImage from '@/assets/pvc-profile-detail.jpg';
+import profileImage from '@/assets/divisorias-header.png';
 
 const features = [
   {
     icon: Shield,
     title: 'Resistência a Impactos',
-    description: 'Material de alta durabilidade que suporta uso intenso sem deformações.',
+    description: 'Material robusto que suporta o uso intensivo do dia a dia sem deformações.',
   },
   {
     icon: Droplets,
-    title: 'Resistente à Umidade',
-    description: '100% impermeável, ideal para ambientes úmidos e limpeza com água.',
+    title: 'Impermeável',
+    description: '100% impermeável, ideal para ambientes úmidos como banheiros e cozinhas.',
   },
   {
     icon: Wrench,
     title: 'Instalação Simplificada',
-    description: 'Sistema de encaixe macho/fêmea que acelera a montagem.',
-  },
-  {
-    icon: SprayCan,
-    title: 'Limpeza Fácil',
-    description: 'Superfície lisa que não acumula sujeira. Basta um pano úmido.',
+    description: 'Sistema de encaixe macho/fêmea que acelera a montagem e reduz custos.',
   },
   {
     icon: Thermometer,
     title: 'Isolamento Térmico/Acústico',
-    description: 'Câmaras de ar internas garantem conforto aos ambientes.',
+    description: 'Proporciona conforto ambiental com isolamento eficiente.',
   },
   {
     icon: Leaf,
-    title: 'Sustentabilidade',
-    description: 'Material 100% reciclável com baixo impacto ambiental.',
+    title: 'Sustentável',
+    description: 'Material reciclável, menor impacto ambiental.',
   },
   {
     icon: Award,
-    title: 'Garantia de Fábrica',
-    description: 'Produto com garantia e suporte técnico do fabricante.',
+    title: 'Garantia Perin Plásticos',
+    description: 'Fabricação própria com controle de qualidade e garantia de fábrica.',
   },
 ];
 
@@ -71,8 +66,7 @@ export const TecnologiaSection = () => {
               <span className="text-primary">fáceis de instalar</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-              A tecnologia Perin garante produtos com qualidade superior, 
-              desenvolvidos para maximizar a durabilidade e simplificar a instalação.
+              Nossa linha de divisórias utiliza tecnologia avançada em PVC para facilitar a instalação, reduzir custos de obra e garantir durabilidade em projetos corporativos.
             </p>
 
             <div className="space-y-4">
@@ -110,7 +104,7 @@ export const TecnologiaSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-perin-lg">
               <img
                 src={profileImage}
-                alt="Perfil de encaixe PVC Perin"
+                alt="Divisórias PVC Perin Plásticos"
                 className="w-full h-auto"
               />
             </div>
@@ -121,7 +115,7 @@ export const TecnologiaSection = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground rounded-2xl p-6 shadow-orange"
             >
-              <p className="font-display font-bold text-3xl">25+</p>
+              <p className="font-display font-bold text-3xl">26+</p>
               <p className="text-sm opacity-90">anos no mercado</p>
             </motion.div>
           </motion.div>

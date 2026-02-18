@@ -1,30 +1,24 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Factory, Calendar, Package, Users } from 'lucide-react';
 import { Button } from './ui/button';
-import heroImage from '@/assets/hero-office.jpg';
+import heroImage from '@/assets/divisoria-pvc-aplicacao.jpg';
+import { WHATSAPP_FULL_URL } from '@/lib/constants';
 
 const badges = [
   { icon: Calendar, text: 'Desde 1999' },
   { icon: Factory, text: 'Fabricação própria' },
-  { icon: Package, text: 'Linha completa Perin' },
+  { icon: Package, text: 'Linha completa' },
   { icon: Users, text: 'Atendimento B2B' },
 ];
 
 export const HeroSection = () => {
-  const handleScrollTo = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Divisórias em PVC Perin em ambiente corporativo"
+          alt="Divisórias em PVC Perin Plásticos em ambiente corporativo"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-perin-900/95 via-perin-900/80 to-perin-900/40" />
@@ -60,11 +54,8 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-perin-50 leading-tight mb-6"
           >
-            Divisórias em PVC Perin para{' '}
+            Divisórias em PVC para{' '}
             <span className="text-primary">Revenda e Distribuição</span>
-            <span className="block text-3xl md:text-4xl lg:text-5xl mt-2 text-perin-200 font-semibold">
-              — padrão, resistência e giro
-            </span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -88,18 +79,22 @@ export const HeroSection = () => {
             <Button
               variant="hero"
               size="lg"
-              onClick={() => handleScrollTo('#contato')}
+              asChild
               className="group"
             >
-              Solicitar Tabela B2B e Catálogo
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
+                Solicitar Tabela B2B e Catálogo
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
             <Button
               variant="heroOutline"
               size="lg"
-              onClick={() => handleScrollTo('#contato')}
+              asChild
             >
-              Quero ser Representante (Região Exclusiva)
+              <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
+                Quero ser Representante
+              </a>
             </Button>
           </motion.div>
 
@@ -112,7 +107,7 @@ export const HeroSection = () => {
           >
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <p className="text-sm text-perin-300">
-              <strong className="text-perin-100">Nota:</strong> Se você é consumidor final, procure um revendedor. Esta página é para B2B.
+              <strong className="text-perin-100">Atenção:</strong> Se você é consumidor final, procure um revendedor. Esta página é exclusiva para parceiros B2B.
             </p>
           </motion.div>
         </div>

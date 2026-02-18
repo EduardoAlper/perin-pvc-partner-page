@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
+import { WHATSAPP_FULL_URL } from '@/lib/constants';
 
 const applications = [
   'Escritórios corporativos',
@@ -31,13 +32,6 @@ const productInfo = [
 export const InformacoesSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const handleScrollTo = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="informacoes" className="py-24 bg-muted" ref={ref}>
@@ -122,11 +116,13 @@ export const InformacoesSection = () => {
               <Button
                 variant="hero"
                 size="lg"
-                onClick={() => handleScrollTo('#contato')}
+                asChild
                 className="w-full sm:w-auto group"
               >
-                Quero especificação técnica + condições B2B
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
+                  Quero especificação técnica + condições B2B
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </motion.div>
           </motion.div>
