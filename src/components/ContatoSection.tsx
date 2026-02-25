@@ -6,14 +6,15 @@ import { Send, Loader2, Phone, Mail, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { PHONE, PHONE_TEL, WHATSAPP_DISPLAY, EMAIL, ADDRESS, ADDRESS_NEIGHBORHOOD } from '@/lib/constants';
 
-type ContactType = 'representante' | 'revendedor' | 'loja' | 'deposito' | 'construtora' | 'outro';
+type ContactType = 'industria' | 'empresa' | 'comercio' | 'clinica' | 'escola' | 'construtora' | 'outro';
 
 const contactTypes: { value: ContactType; label: string }[] = [
-  { value: 'representante', label: 'Representante' },
-  { value: 'revendedor', label: 'Revendedor/Distribuidor' },
-  { value: 'loja', label: 'Loja de Materiais' },
-  { value: 'deposito', label: 'Depósito' },
-  { value: 'construtora', label: 'Construtora/Empreiteira' },
+  { value: 'industria', label: 'Indústria' },
+  { value: 'empresa', label: 'Empresa / Escritório' },
+  { value: 'comercio', label: 'Comércio / Loja' },
+  { value: 'clinica', label: 'Clínica / Saúde' },
+  { value: 'escola', label: 'Escola / Instituto' },
+  { value: 'construtora', label: 'Construtora / Empreiteira' },
   { value: 'outro', label: 'Outro' },
 ];
 
@@ -69,20 +70,7 @@ export const ContatoSection = () => {
       body += `Cidade/UF: ${formData.cidade} - ${formData.uf}\n`;
       if (formData.mensagem) body += `Mensagem: ${formData.mensagem}\n`;
 
-      if (formData.tipo === 'representante') {
-        body += `\n--- Informações de Representante ---\n`;
-        if (formData.cidadesAtuacao) body += `Cidades/Estados de atuação: ${formData.cidadesAtuacao}\n`;
-        if (formData.carteira) body += `Carteira de clientes: ${formData.carteira}\n`;
-        if (formData.cnae) body += `CNAE: ${formData.cnae}\n`;
-        if (formData.faturamento) body += `Faturamento médio: ${formData.faturamento}\n`;
-      }
-
-      if (['revendedor', 'loja', 'deposito'].includes(formData.tipo)) {
-        body += `\n--- Informações de Revenda ---\n`;
-        if (formData.capacidadeEstoque) body += `Capacidade de estoque: ${formData.capacidadeEstoque}\n`;
-        if (formData.mixPvc) body += `Mix PVC: ${formData.mixPvc}\n`;
-        if (formData.canaisVenda) body += `Canais de venda: ${formData.canaisVenda}\n`;
-      }
+      // Additional info can be appended if needed
 
       // Send via mailto as fallback (no backend yet)
       const subject = encodeURIComponent(`Contato B2B - ${formData.tipo} - ${formData.empresa}`);
@@ -138,11 +126,11 @@ export const ContatoSection = () => {
             Contato
           </span>
           <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            Fale com o Comercial{' '}
+            Fale com a{' '}
             <span className="text-primary">Perin Plásticos</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Preencha o formulário e nossa equipe entrará em contato para apresentar as melhores condições para o seu negócio.
+            Preencha o formulário e nossa equipe entrará em contato com orientação para especificação e orçamento.
           </p>
         </motion.div>
 
@@ -197,7 +185,7 @@ export const ContatoSection = () => {
             <form onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-8 shadow-perin">
               {/* Contact Type */}
               <div className="mb-6">
-                <label className={labelClasses}>Você é: *</label>
+                <label className={labelClasses}>Segmento da sua empresa: *</label>
                 <select
                   name="tipo"
                   value={formData.tipo}
@@ -264,59 +252,7 @@ export const ContatoSection = () => {
                 />
               </div>
 
-              {/* Conditional Fields - Representante */}
-              {formData.tipo === 'representante' && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="space-y-4 mb-6 p-4 bg-muted rounded-lg"
-                >
-                  <h4 className="font-display font-semibold text-foreground mb-4">Informações para Representantes</h4>
-                  <div>
-                    <label className={labelClasses}>Cidades/Estados que pretende atuar</label>
-                    <input type="text" name="cidadesAtuacao" value={formData.cidadesAtuacao} onChange={handleChange} placeholder="Ex: Grande São Paulo, Interior de SP..." className={inputClasses} />
-                  </div>
-                  <div>
-                    <label className={labelClasses}>Já possui carteira de clientes?</label>
-                    <input type="text" name="carteira" value={formData.carteira} onChange={handleChange} placeholder="Descreva brevemente..." className={inputClasses} />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className={labelClasses}>CNAE principal</label>
-                      <input type="text" name="cnae" value={formData.cnae} onChange={handleChange} placeholder="Ex: 4679-6/99" className={inputClasses} />
-                    </div>
-                    <div>
-                      <label className={labelClasses}>Faturamento médio</label>
-                      <input type="text" name="faturamento" value={formData.faturamento} onChange={handleChange} placeholder="Ex: R$ 50.000/mês" className={inputClasses} />
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Conditional Fields - Revendedor/Distribuidor */}
-              {(formData.tipo === 'revendedor' || formData.tipo === 'loja' || formData.tipo === 'deposito') && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="space-y-4 mb-6 p-4 bg-muted rounded-lg"
-                >
-                  <h4 className="font-display font-semibold text-foreground mb-4">Informações para Revenda/Distribuição</h4>
-                  <div>
-                    <label className={labelClasses}>Capacidade de estoque</label>
-                    <input type="text" name="capacidadeEstoque" value={formData.capacidadeEstoque} onChange={handleChange} placeholder="Ex: 500m² de área coberta..." className={inputClasses} />
-                  </div>
-                  <div>
-                    <label className={labelClasses}>Já trabalha com PVC? Qual mix?</label>
-                    <input type="text" name="mixPvc" value={formData.mixPvc} onChange={handleChange} placeholder="Ex: Forros, réguas..." className={inputClasses} />
-                  </div>
-                  <div>
-                    <label className={labelClasses}>Canais de venda</label>
-                    <input type="text" name="canaisVenda" value={formData.canaisVenda} onChange={handleChange} placeholder="Ex: Loja física, e-commerce, televendas..." className={inputClasses} />
-                  </div>
-                </motion.div>
-              )}
+              {/* No conditional fields for buyer-final form */}
 
               <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? (

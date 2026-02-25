@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Factory, Calendar, Package, Users } from 'lucide-react';
+import { ArrowRight, Factory, Calendar, Package, Building2 } from 'lucide-react';
 import { Button } from './ui/button';
 import heroImage from '@/assets/divisoria-pvc-aplicacao.jpg';
 import { WHATSAPP_FULL_URL } from '@/lib/constants';
@@ -8,7 +8,7 @@ const badges = [
   { icon: Calendar, text: 'Desde 1999' },
   { icon: Factory, text: 'Fabricação própria' },
   { icon: Package, text: 'Linha completa' },
-  { icon: Users, text: 'Atendimento B2B' },
+  { icon: Building2, text: 'Para empresas e indústrias' },
 ];
 
 export const HeroSection = () => {
@@ -42,20 +42,29 @@ export const HeroSection = () => {
                 className="flex items-center gap-2 bg-perin-100/10 backdrop-blur-sm border border-perin-100/20 rounded-full px-4 py-2"
               >
                 <badge.icon className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-perin-100">{badge.text}</span>
+                <span className="text-sm font-medium text-white">{badge.text}</span>
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Company name */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-primary font-display font-semibold text-lg mb-2 uppercase tracking-widest"
+          >
+            Perin Plásticos
+          </motion.p>
 
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-perin-50 leading-tight mb-6"
+            className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6"
           >
-            Divisórias em PVC para{' '}
-            <span className="text-primary">Revenda e Distribuição</span>
+            Divisórias em PVC
           </motion.h1>
 
           {/* Subheadline */}
@@ -63,10 +72,18 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-lg md:text-xl text-perin-300 mb-10 leading-relaxed max-w-2xl"
+            className="text-lg md:text-xl text-perin-300 mb-4 leading-relaxed max-w-2xl"
           >
-            Para distribuidores, lojas de materiais e depósitos que precisam de
-            fornecedor confiável, condições competitivas e prazos consistentes.
+            Separe ambientes com rapidez, organização e excelente custo-benefício — com instalação prática e alta durabilidade.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
+            className="text-base text-perin-400 mb-10"
+          >
+            Compra direta para empresas e indústrias.
           </motion.p>
 
           {/* CTAs */}
@@ -83,7 +100,7 @@ export const HeroSection = () => {
               className="group"
             >
               <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
-                Solicitar Tabela B2B e Catálogo
+                Solicitar orçamento
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
@@ -92,23 +109,10 @@ export const HeroSection = () => {
               size="lg"
               asChild
             >
-              <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
-                Quero ser Representante
+              <a href="#informacoes">
+                Ver aplicações
               </a>
             </Button>
-          </motion.div>
-
-          {/* B2B Notice */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
-            className="inline-flex items-center gap-2 bg-perin-800/50 backdrop-blur-sm border border-perin-700 rounded-lg px-4 py-3"
-          >
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <p className="text-sm text-perin-300">
-              <strong className="text-perin-100">Atenção:</strong> Se você é consumidor final, procure um revendedor. Esta página é exclusiva para parceiros B2B.
-            </p>
           </motion.div>
         </div>
       </div>

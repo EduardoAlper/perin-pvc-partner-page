@@ -65,8 +65,11 @@ export const TecnologiaSection = () => {
               Divisórias leves, resistentes e{' '}
               <span className="text-primary">fáceis de instalar</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
               Nossa linha de divisórias utiliza tecnologia avançada em PVC para facilitar a instalação, reduzir custos de obra e garantir durabilidade em projetos corporativos.
+            </p>
+            <p className="text-base text-muted-foreground mb-10 leading-relaxed">
+              Projetadas para uso diário, as divisórias em PVC da Perin Plásticos entregam resistência à umidade, facilidade de limpeza e montagem mais ágil — ideal para quem precisa dividir áreas internas com eficiência e previsibilidade de custos.
             </p>
 
             <div className="space-y-4">

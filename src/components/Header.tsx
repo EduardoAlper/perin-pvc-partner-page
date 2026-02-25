@@ -6,11 +6,10 @@ import { WHATSAPP_FULL_URL } from '@/lib/constants';
 import logoImg from '@/assets/logo-perin.png';
 
 const navItems = [
-  { label: 'Soluções', href: '#elegancia' },
+  { label: 'Organização', href: '#elegancia' },
   { label: 'Tecnologia', href: '#tecnologia' },
   { label: 'Benefícios', href: '#beneficios' },
   { label: 'Informações', href: '#informacoes' },
-  { label: 'B2B', href: '#b2b' },
   { label: 'Contato', href: '#contato' },
 ];
 
@@ -46,7 +45,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="https://perinplasticos.com.br" className="flex items-center">
-            <img src={logoImg} alt="Perin Plásticos" className="h-12" />
+            <img src={logoImg} alt="Perin Plásticos" className="h-16" />
           </a>
 
           {/* Desktop Navigation */}
@@ -56,7 +55,7 @@ export const Header = () => {
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
                 className={`px-4 py-2 text-sm font-medium transition-colors duration-200 font-display ${
-                  isScrolled ? 'text-muted-foreground hover:text-primary' : 'text-white/80 hover:text-primary'
+                  isScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-primary'
                 }`}
               >
                 {item.label}
@@ -67,21 +66,12 @@ export const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <Button
-              variant="outline"
-              size="sm"
-              asChild
-            >
-              <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
-                Tabela B2B
-              </a>
-            </Button>
-            <Button
               variant="default"
               size="sm"
               asChild
             >
               <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
-                Seja Representante
+                Solicitar Orçamento
               </a>
             </Button>
           </div>
@@ -116,14 +106,9 @@ export const Header = () => {
                 </button>
               ))}
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-border">
-                <Button variant="outline" asChild>
-                  <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
-                    Tabela B2B
-                  </a>
-                </Button>
                 <Button variant="default" asChild>
                   <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
-                    Seja Representante
+                    Solicitar Orçamento
                   </a>
                 </Button>
               </div>

@@ -27,14 +27,14 @@ export const EleganciaSection = () => {
           className="max-w-3xl mb-16"
         >
           <span className="inline-block px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-semibold mb-4 font-display">
-            Soluções Práticas
+            Organização e praticidade
           </span>
           <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            Ambientes bem divididos, obra rápida e{' '}
-            <span className="text-primary">manutenção mínima</span>
+            Ambientes organizados,{' '}
+            <span className="text-primary">sem obra pesada</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Divisórias: uma solução prática e profissional para projetos corporativos, com facilidade na instalação, alta durabilidade e economia no longo prazo.
+            As divisórias em PVC ajudam você a organizar fluxos, separar áreas e otimizar o espaço sem obra pesada. Uma solução limpa, durável e fácil de manter para ambientes de uso intenso.
           </p>
         </motion.div>
 
@@ -63,6 +63,16 @@ export const EleganciaSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.6 }}
+          className="text-center text-muted-foreground mt-10 max-w-2xl mx-auto"
+        >
+          Divisórias: uma solução prática e profissional para projetos corporativos, com facilidade na instalação, alta durabilidade e economia no longo prazo.
+        </motion.p>
       </div>
     </section>
   );

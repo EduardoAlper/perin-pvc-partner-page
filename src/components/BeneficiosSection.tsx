@@ -1,44 +1,44 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { 
+  Clock, 
   Droplets, 
-  Settings, 
-  PenTool, 
-  Flame, 
+  Shield, 
+  LayoutGrid, 
   RefreshCw, 
-  Bug 
+  TrendingDown 
 } from 'lucide-react';
 
 const benefits = [
   {
+    icon: Clock,
+    title: 'Instalação rápida e limpa',
+    description: 'Menos tempo de obra, sem entulho e sem quebrar paredes.',
+  },
+  {
     icon: Droplets,
-    title: 'Não Absorve Umidade',
-    description: '100% impermeável, ideal para áreas úmidas',
+    title: 'Fácil limpeza e baixa manutenção',
+    description: 'Superfície lisa, resistente e de fácil higienização no dia a dia.',
   },
   {
-    icon: Settings,
-    title: 'Baixa Manutenção',
-    description: 'Material durável que dispensa reparos constantes',
+    icon: Shield,
+    title: 'Resistente à umidade e ao uso intenso',
+    description: '100% impermeável, suporta ambientes úmidos e de alto tráfego.',
   },
   {
-    icon: PenTool,
-    title: 'Fácil Instalação',
-    description: 'Sistema de encaixe rápido sem obra suja',
-  },
-  {
-    icon: Flame,
-    title: 'Anti-Chamas',
-    description: 'Material auto-extinguível com segurança contra fogo',
+    icon: LayoutGrid,
+    title: 'Organiza setores e otimiza metragem',
+    description: 'Divida áreas de forma eficiente e aproveite melhor o espaço disponível.',
   },
   {
     icon: RefreshCw,
-    title: 'Reutilizável',
-    description: 'Pode ser desmontado e remontado em outro local',
+    title: 'Adaptável e reconfigurável',
+    description: 'Pode ser desmontado e remontado conforme o layout mudar.',
   },
   {
-    icon: Bug,
-    title: 'Imune a Pragas',
-    description: 'Não sofre ataques de cupins ou outros insetos',
+    icon: TrendingDown,
+    title: 'Excelente custo-benefício',
+    description: 'Menor custo de obra e manutenção reduzida no longo prazo.',
   },
 ];
 
@@ -59,11 +59,11 @@ export const BeneficiosSection = () => {
             Benefícios
           </span>
           <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-            Benefícios que facilitam a venda e{' '}
-            <span className="text-primary">reduzem dor de cabeça na obra</span>
+            Vantagens que fazem diferença{' '}
+            <span className="text-primary">no dia a dia da sua empresa</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Argumentos sólidos para sua equipe de vendas e tranquilidade para seus clientes.
+            Praticidade, durabilidade e economia — do projeto à operação.
           </p>
         </motion.div>
 
