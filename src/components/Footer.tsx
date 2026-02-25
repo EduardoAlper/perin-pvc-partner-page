@@ -13,7 +13,7 @@ export const Footer = () => {
               <img src={logoImg} alt="Perin Plásticos" className="h-12 brightness-0 invert" />
             </div>
             <p className="text-perin-400 mb-6 max-w-md">
-              Fabricação própria de divisórias em PVC desde 1999. Qualidade, durabilidade e condições especiais para parceiros B2B.
+              Fabricação própria de divisórias em PVC desde 1999. Qualidade, durabilidade e atendimento direto para empresas e indústrias.
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -101,7 +101,7 @@ export const Footer = () => {
             <div className="flex items-center gap-2 bg-perin-800/50 rounded-full px-4 py-2">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <p className="text-xs text-perin-400">
-                <strong className="text-perin-300">Atendimento exclusivo B2B.</strong> Atendemos revendedores, distribuidores, construtoras e representantes. Não vendemos varejo.
+                <strong className="text-perin-300">Perin Plásticos</strong> — atendimento direto para empresas, indústrias e projetos corporativos.
               </p>
             </div>
           </div>

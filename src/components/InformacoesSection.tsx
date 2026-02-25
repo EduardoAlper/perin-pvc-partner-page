@@ -5,18 +5,18 @@ import { ArrowRight } from 'lucide-react';
 import { WHATSAPP_FULL_URL } from '@/lib/constants';
 
 const applications = [
-  'Escritórios corporativos',
-  'Clínicas e consultórios',
-  'Lojas e comércios',
-  'Escolas e universidades',
-  'Salas de reunião',
-  'Hotéis e pousadas',
-  'Academias',
+  'Indústrias alimentícias e não alimentícias',
+  'Escritórios e áreas administrativas',
+  'Clínicas e ambientes de atendimento',
+  'Lojas, estoque e áreas de apoio',
+  'Escolas e salas técnicas',
+  'Restaurantes e cozinhas de apoio',
+  'Garagens e áreas internas',
   'Centros de convenções',
-  'Restaurantes e cafés',
-  'Garagens e hangares',
+  'Academias',
+  'Hotéis e pousadas',
   'Estufas agrícolas',
-  'Indústrias',
+  'E outros ambientes internos',
 ];
 
 const productInfo = [
@@ -26,7 +26,7 @@ const productInfo = [
   { label: 'Tipo de encaixe', value: 'Sistema macho/fêmea' },
   { label: 'Impermeabilidade', value: '100% impermeável' },
   { label: 'Embalagem padrão', value: '4 peças por pacote' },
-  { label: 'Aplicabilidade', value: 'Áreas internas' },
+  { label: 'Aplicação', value: 'Áreas internas' },
 ];
 
 export const InformacoesSection = () => {
@@ -58,9 +58,12 @@ export const InformacoesSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <h3 className="font-display font-bold text-2xl text-foreground mb-6">
+            <h3 className="font-display font-bold text-2xl text-foreground mb-2">
               Indicado para
             </h3>
+            <p className="text-muted-foreground mb-6">
+              Perfeito para empresas que precisam separar áreas internas com praticidade.
+            </p>
             <div className="flex flex-wrap gap-3">
               {applications.map((app, index) => (
                 <motion.span
@@ -120,7 +123,7 @@ export const InformacoesSection = () => {
                 className="w-full sm:w-auto group"
               >
                 <a href={WHATSAPP_FULL_URL} target="_blank" rel="noopener noreferrer">
-                  Quero especificação técnica + condições B2B
+                  Solicitar orçamento
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>

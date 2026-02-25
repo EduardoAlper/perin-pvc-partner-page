@@ -12,7 +12,7 @@ export const WHATSAPP_FULL_URL = `${WHATSAPP_URL}?text=${WHATSAPP_MESSAGE}`;
 export const PHONE = '(41) 3282-8000';
 export const PHONE_TEL = 'tel:+554132828000';
 export const WHATSAPP_DISPLAY = '(41) 98407-8829';
-export const EMAIL = 'comercial@perinplasticos.com.br';
+export const EMAIL = 'contato@perinplasticos.com.br';
 export const ADDRESS = 'Rodovia Contorno Leste BR 116, n° 5318';
 export const ADDRESS_NEIGHBORHOOD = 'Bairro Quississana, São José dos Pinhais - PR';
 
