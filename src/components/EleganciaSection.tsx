@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import divisoriaAplicacao from '@/assets/divisoria-pvc-aplicacao.jpg';
+import divisoriasGallery from '@/assets/divisorias-pvc-gallery.jpg';
 import divisoriaProduto from '@/assets/divisoria-pvc-produto.jpg';
-import divisoriasHeader from '@/assets/divisorias-header.png';
-import portaDivisoria from '@/assets/porta-divisoria.jpg';
+import aplicacaoAmbientes from '@/assets/aplicacao-ambientes.jpg';
+import portaDivisoria from '@/assets/porta-divisoria-real.png';
 
 const images = [
-  { src: divisoriasHeader, alt: 'Divisórias em PVC Perin Plásticos', caption: 'Divisórias PVC' },
-  { src: divisoriaAplicacao, alt: 'Divisórias PVC aplicação em ambiente', caption: 'Aplicação em Ambientes' },
+  { src: divisoriasGallery, alt: 'Divisórias em PVC Perin Plásticos', caption: 'Divisórias PVC' },
+  { src: aplicacaoAmbientes, alt: 'Divisórias PVC aplicação em ambiente', caption: 'Aplicação em Ambientes' },
   { src: divisoriaProduto, alt: 'Divisória PVC 200x35 Perin Plásticos', caption: 'Perfil Divisória' },
   { src: portaDivisoria, alt: 'Porta PVC Divisória Perin Plásticos', caption: 'Porta Divisória' },
 ];
