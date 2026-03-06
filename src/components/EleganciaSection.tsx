@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import divisoriasGallery from '@/assets/divisorias-pvc-gallery.jpg';
 import divisoriaProduto from '@/assets/divisoria-pvc-produto.jpg';
 import aplicacaoAmbientes from '@/assets/aplicacao-ambientes.jpg';
-import portaDivisoria from '@/assets/porta-divisoria-real.png';
 
 const images = [
   { src: divisoriasGallery, alt: 'Divisórias em PVC Perin Plásticos', caption: 'Divisórias PVC' },
