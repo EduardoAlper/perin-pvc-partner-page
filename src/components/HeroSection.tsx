@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Factory, Calendar, Package, Building2 } from 'lucide-react';
 import { Button } from './ui/button';
-import heroImage from '@/assets/divisoria-pvc-aplicacao.jpg';
+import heroImage from '@/assets/hero-industrial.jpg';
 import { WHATSAPP_FULL_URL } from '@/lib/constants';
 
 const badges = [
