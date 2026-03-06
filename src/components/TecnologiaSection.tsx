@@ -1,10 +1,8 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { 
-  Shield, 
   Droplets, 
   Wrench, 
-  SprayCan, 
   Thermometer, 
   Leaf, 
   Award 
