@@ -20,7 +20,7 @@ const applications = [
 ];
 
 const productInfo = [
-  { label: 'Comprimentos disponíveis', value: 'Peças de 6 metros' },
+  { label: 'Comprimentos disponíveis', value: 'Peças de 2,10 e 3,00 metros' },
   { label: 'Largura', value: '200mm' },
   { label: 'Peso aproximado', value: '5kg/m²' },
   { label: 'Tipo de encaixe', value: 'Sistema macho/fêmea' },
