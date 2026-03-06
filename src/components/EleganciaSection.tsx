@@ -10,7 +10,6 @@ const images = [
   { src: divisoriasGallery, alt: 'Divisórias em PVC Perin Plásticos', caption: 'Divisórias PVC' },
   { src: aplicacaoAmbientes, alt: 'Divisórias PVC aplicação em ambiente', caption: 'Aplicação em Ambientes' },
   { src: divisoriaProduto, alt: 'Divisória PVC 200x35 Perin Plásticos', caption: 'Perfil Divisória' },
-  { src: portaDivisoria, alt: 'Porta PVC Divisória Perin Plásticos', caption: 'Porta Divisória' },
 ];
 
 export const EleganciaSection = () => {
