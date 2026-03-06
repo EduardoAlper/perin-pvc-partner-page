@@ -9,7 +9,7 @@ import {
   Leaf, 
   Award 
 } from 'lucide-react';
-import profileImage from '@/assets/divisorias-header.png';
+import profileImage from '@/assets/divisoria-pvc-produto.jpg';
 
 const features = [
   {
