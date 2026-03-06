@@ -11,11 +11,6 @@ import profileImage from '@/assets/divisoria-pvc-produto.jpg';
 
 const features = [
   {
-    icon: Shield,
-    title: 'Resistência a Impactos',
-    description: 'Material robusto que suporta o uso intensivo do dia a dia sem deformações.',
-  },
-  {
     icon: Droplets,
     title: 'Impermeável',
     description: '100% impermeável, ideal para ambientes úmidos como banheiros e cozinhas.',
