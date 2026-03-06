@@ -1,10 +1,8 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { 
-  Shield, 
   Droplets, 
   Wrench, 
-  SprayCan, 
   Thermometer, 
   Leaf, 
   Award 
@@ -12,11 +10,6 @@ import {
 import profileImage from '@/assets/divisoria-pvc-produto.jpg';
 
 const features = [
-  {
-    icon: Shield,
-    title: 'Resistência a Impactos',
-    description: 'Material robusto que suporta o uso intensivo do dia a dia sem deformações.',
-  },
   {
     icon: Droplets,
     title: 'Impermeável',
