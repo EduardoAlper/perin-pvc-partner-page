@@ -22,7 +22,7 @@ export const EleganciaSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="max-w-3xl mb-16"
+          className="max-w-3xl mb-16 mx-auto text-center"
         >
           <span className="inline-block px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-semibold mb-4 font-display">
             Organização e praticidade
